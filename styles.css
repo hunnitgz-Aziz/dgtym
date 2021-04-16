@@ -1,12 +1,40 @@
+@font-face{
+    font-family: Maax;
+    src: url(/fonts/MaaxDisplayTrial-Ultra.otf);
+    font-weight:bold;
+}
+@font-face{
+    font-family: RM;
+    src: url(/fonts/rmregular.otf);
+}
+
+html{
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
 body{
     margin:0px;
-    overflow:hidden
+    overflow:hidden;
+    /* font-size:32px; */
+    font-size:2vw;
+    font-family: 'RM', sans-serif;
+    line-height:0.95;
+    letter-spacing:-0.04em;
+}
+button{
+    font-size:2vw;
+    line-height:0.95;
+    letter-spacing:-0.04em;
+    font-family: 'RM', sans-serif;
+    cursor:pointer;
 }
 canvas{
     position:fixed !important;
     top:0px;
     left:0px;
-    z-index:2;
+    z-index:4;
     mix-blend-mode: multiply;
 }
 #default-brush{
@@ -31,6 +59,19 @@ canvas{
   scrollbar-width: none;  /* Firefox */
 }
 
+ul{
+    list-style-type:none;
+    padding:0px;
+    column-count:2;
+}
+
+li{
+    margin-bottom:1em;
+    -webkit-column-break-inside: avoid;
+          page-break-inside: avoid;
+               break-inside: avoid;
+}
+
 section{
     width:calc(100vw - var(--margin)*2);
     height:calc(100vh - var(--margin)*2);
@@ -48,10 +89,15 @@ section{
     transform:translateY(-100%);
     z-index:2;
 }
+#film .scrollable{
+    column-count:2;
+}
 #album{
-    background:url(img/Background_Dark.png);
+    /* background:url(img/Background_Dark.png); */
+    background-color:#1e1c1d;
     transform:translateY(100%);
     z-index:1;
+    color:white;
 }
 
 #main{
@@ -68,37 +114,101 @@ section:after{
     position:fixed;
     top:0px;
     left:0px;
-    opacity:0.35;
+    opacity:0.5;
     mix-blend-mode: multiply;
     /* z-index: 2; */
 }
 
+section#album:after{
+    opacity: 1;
+    background-size:500px;
+    background-attachment:fixed;
+}
+
+.scrollable{
+    width: calc(100% - var(--margin)*2);
+    height: calc(100% - var(--margin)*2);
+    overflow: scroll;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: var(--margin);
+}
+
 .polaroids-container{
     overflow:scroll;
-    width:90vw;
-    background:yellow;
-    padding:10px;
-    z-index:4;
+    height:calc(100vw - 0px);
+    width:calc(100vh - 0px);
+    margin:0px;
+    /* background:yellow; */
+    /* padding:10px; */
+    z-index:6;
     position:fixed;
+    top: 0px;
+    left: 0px;
+    transform-origin: top left;
+    transform: rotate(-90deg) translateX(-100%);
+    display:inline;
 }
 
 .polaroids{
-    background:red;
-    width:300vw;
+    /* background:red; */
+    height:300vw;
     position:relative;
 }
 
-.polaroids img{
+.polaroids > div{
     /* position:absolute; */
     width:200px;
     display:inline-block;
+    transform:rotate(90deg);
+    position:absolute;
+    cursor:move;
+    transition:transform 100ms;
+}
+.polaroids img{
+    width:100%;
+}
+
+div.img2 {
+    transform: rotate(95deg);
+    width: 18vw;
+    top: 46vw;
+    left: 10vh;
+}
+div.img4{display:none}
+div.img5{top:100vw;left:0px;}
+div.img7 {
+    width: 13vw;
+    top: 1vw;
+    right: 15vh;
+    transform: rotate(86deg);
+}
+
+div.img10 {
+    width: 18vw;
+    transform: rotate(87deg);
+    left: 15vh;
+    top: 60vw;
+}
+div.img16 {
+    transform: rotate(92deg);
+    width: 17vw;
+    top: 40vw;
+    left: 10vh;
+}
+div.img17{
+    transform: rotate(84deg);
+    width: 18vw;
+    left: 24vh;
+    top: 14vw;
 }
 
 #toggle-film, #toggle-album{
     position:fixed;
     top:0px;
     left:50%;
-    z-index:3;
+    z-index:5;
     transform:translateX(-50%);
     outline:none;
     border:0px;
@@ -106,8 +216,8 @@ section:after{
     background:transparent;
     cursor:pointer;
     color:var(--green);
-    font-size:32px;
-    letter-spacing:-0.05em;
+    /* font-size:1em; */
+    /* letter-spacing:-0.05em; */
     padding:6px;
 }
 #toggle-album{
@@ -123,5 +233,52 @@ section:after{
     max-width:1000px;
     min-width:500px;
     transform:translateY(-50%) translateX(-50%);
-    z-index:1;
+    z-index:2;
+    transition: 300ms ease-in-out;
+    pointer-events:none;
+}
+
+.page-open #logo {
+    z-index: 2;
+    top: 50px;
+    min-width: inherit;
+    width: 270px;
+    pointer-events:visible
+}
+
+#album h2{
+    font-family:'Maax';
+    font-size:1em;
+    font-weight:bold;
+    margin:0px;
+    letter-spacing:0;
+    position:relative;
+    top:-5px;
+}
+
+#album p{
+    margin:0px;
+}
+
+#album button{
+    text-decoration:underline;
+    border:0px;
+    outline:none;
+    color:white;
+    padding:0px;
+    background:transparent;
+}
+
+
+
+p.small{
+    font-size:14px;
+}
+
+#album button + div{
+    display:none;
+}
+
+#album button.active + div{
+    display:block;
 }

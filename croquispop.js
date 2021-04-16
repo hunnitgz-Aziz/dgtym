@@ -9,7 +9,7 @@ croquis.selectLayer(1);
 croquis.unlockHistory();
 
 var brush = new Croquis.Brush();
-brush.setSize(8);
+brush.setSize(10);
 brush.setColor('#000');
 brush.setSpacing(0.13);
 brush.setFlow(0.4);
