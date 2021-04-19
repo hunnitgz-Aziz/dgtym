@@ -54,7 +54,7 @@ function canvasPointerUp(e) {
     setPointerEvent(e);
     var pointerPosition = getRelativePosition(e.clientX, e.clientY);
     if (pointerEventsNone)
-        canvasArea.style.setProperty('cursor', 'crosshair');
+        canvasArea.style.setProperty('cursor', 'url("img/draw-cursor.png"), auto');
     croquis.up(pointerPosition.x, pointerPosition.y, e.pointerType === "pen" ? e.pressure : 1);
     if (e.pointerType === "pen" && e.button == 5)
         setTimeout(function() {croquis.setPaintingKnockout(selectEraserCheckbox.checked)}, 30);//timeout should be longer than 20 (knockoutTickInterval in Croquis)

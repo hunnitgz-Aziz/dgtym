@@ -23,7 +23,8 @@ body{
     line-height:0.95;
     letter-spacing:-0.04em;
     /* background: #201f21; */
-    background-image:url(/img/Website_Background_Black.jpg)
+    /* background-image:url(/img/Website_Background_Black.jpg); */
+    background:black;
 }
 button{
     font-size:2vw;
@@ -132,7 +133,7 @@ section{
     top:50%;
     left:50%;
     transform:translateX(-50%) translateY(-50%);
-    cursor:move;
+    cursor:url('img/grab.png'), auto;
 }
 #resizer{
     position:absolute;
@@ -214,7 +215,7 @@ section{
     left:50%;
     top:50%;
     transform:translateY(-50%) translateX(-50%);
-    cursor:move;
+    cursor:url('img/grab.png'), auto;
 }
 .album-cover{
     width:100%;
@@ -285,7 +286,7 @@ section#album:after{
     display:inline-block;
     transform:rotate(90deg);
     position:absolute;
-    cursor:move;
+    cursor:url('img/grab.png'), auto;
     transition:transform 100ms;
 }
 .polaroids img{
@@ -431,4 +432,9 @@ p.small{
 
 #album button.active + div{
     display:block;
+}
+
+
+body > *:not(.CANVAS){
+    visibility:hidden;
 }
