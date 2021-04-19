@@ -290,6 +290,10 @@ section#album:after{
 }
 .polaroids img{
     width:100%;
+    transition:transform 100ms linear;
+}
+.polaroids img:hover{
+    transform:scale(1.05);
 }
 
 div.img2 {

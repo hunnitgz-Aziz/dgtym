@@ -170,7 +170,7 @@ function dragImage(elmnt) {
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
-    elmnt.style.transform = "rotate("+ (Math.random() * 4 + 88) +"deg) scale(1.08)";
+    elmnt.style.transform = "rotate("+ (Math.random() * 4 + 88) +"deg) scale(1.05)";
     elmnt.style.zIndex = "2";
   }
 
