@@ -3,16 +3,16 @@ var croquis = new Croquis();
 croquis.lockHistory();
 croquis.setCanvasSize(window.innerWidth, window.innerHeight);
 croquis.addLayer();
-croquis.fillLayer('#fff');
+// croquis.fillLayer('#fff');
 croquis.addLayer();
 croquis.selectLayer(1);
 croquis.unlockHistory();
 
 var brush = new Croquis.Brush();
-brush.setSize(10);
-brush.setColor('#000');
+brush.setSize(7);
+brush.setColor('#b2afb1');
 brush.setSpacing(0.13);
-brush.setFlow(0.4);
+brush.setFlow(0.6);
 brush.setImage(document.getElementById("default-brush"));
 setTimeout(function(){
     brush.setImage(document.getElementById("default-brush"));
@@ -27,7 +27,7 @@ croquis.setToolStabilizeWeight(0.4);
 window.onresize=function(){
     croquis.setCanvasSize(window.innerWidth, window.innerHeight);
     croquis.addLayer();
-    croquis.fillLayer('#fff');
+    // croquis.fillLayer('#fff');
 }
 
 
@@ -209,7 +209,7 @@ function pickColor(x, y) {
     colorPickerThumb.style.setProperty('margin-top',
         (minmax(y, 0, sbSize) - (sbSize + halfThumbRadius)) + 'px');
     colorPickerThumb.style.setProperty('border-color',
-        (y < sbSize * 0.5)? '#000' : '#fff');
+        (y < sbSize * 0.5)? '#b2afb1' : '#fff');
     setColor();
 }
 // colorPickerSb.addEventListener('pointerdown', colorPickerPointerDown);
