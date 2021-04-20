@@ -196,7 +196,7 @@ function dragImage(elmnt) {
   }
 }
 
-document.onwheel=function(){
+document.getElementById("main").onwheel=function(){
     c.style.zIndex = 2;
 }
 

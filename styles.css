@@ -20,11 +20,10 @@ body{
     /* font-size:32px; */
     font-size:2vw;
     font-family: 'RM', sans-serif;
-    line-height:0.95;
+    line-height:1;
     letter-spacing:-0.04em;
     /* background: #201f21; */
-    /* background-image:url(/img/Website_Background_Black.jpg); */
-    background:black;
+    background-image:url(/img/Website_Background_Black.jpg)
 }
 button{
     font-size:2vw;
@@ -44,6 +43,9 @@ canvas{
 .CANVAS{
     /* mix-blend-mode:multiply; */
 }
+#canvas-area{
+    cursor:url('img/draw-cursor.png'), auto;
+}
 #default-brush{
     position:fixed;
     left:-100px;
@@ -52,7 +54,7 @@ canvas{
 }
 
 :root{
-    --margin: 30px;
+    --margin: 20px;
     --green: #219e4a;
     --grey: #b8b9b8;
 }
@@ -73,6 +75,7 @@ ul{
     column-count:2;
     position: relative;
     display: block;
+    margin:0px;
     
 }
 
@@ -103,7 +106,7 @@ section{
     width:calc(100vw - var(--margin)*2);
     height:calc(100vh - var(--margin)*2);
     background:black;
-    overflow:scroll;
+    /* overflow:scroll; */
     padding:var(--margin);
     top:0px;
     left:0px;
@@ -111,12 +114,16 @@ section{
     transition: transform 300ms ease-in-out;
 }
 
+
 #film{
     background:#7a7094;
     transform:translateY(-100%);
     z-index:2;
+    padding:0;
+    width:100vw;
+    height:100vh;
 }
-#film > div:not(.film-container){
+#credits > div{
     column-count:2;
 }
 .film-container > div {
@@ -124,6 +131,7 @@ section{
     transform: translateY(-50%);
     width: calc(100% - 3px);
 }
+
 .film-container{
     width:58vw;
     height:39vw;
@@ -135,7 +143,23 @@ section{
     transform:translateX(-50%) translateY(-50%);
     cursor:url('img/grab.png'), auto;
 }
+.film-container:active{
+    cursor:url('img/grabbing.png'), auto;
+}
+.film-container:hover #resizer{
+    display:block;
+}
+#credits{
+    height:calc(100vh - var(--margin)*2);
+    width:calc(100vw - var(--margin)*2);
+    padding:var(--margin);
+    overflow:scroll;
+}
+#credits div{
+    min-height:200vh;
+}
 #resizer{
+    display:none;
     position:absolute;
     top:5px;
     right:0px;
@@ -189,6 +213,7 @@ section{
 .listen-links{
     display:flex;
     justify-content:space-between;
+    margin:2px -2px
 }
 .listen-links a{
     border:2px solid var(--grey);
@@ -201,6 +226,7 @@ section{
     width:100%;
     transition:color 300ms, border-color 300ms, background 300ms;
     text-align:center;
+    margin: 2px;
 }
 .listen-links a:hover{
     color:black;
@@ -210,12 +236,16 @@ section{
 
 .album-container{
     width:40vw;
+    min-width: 500px;
     z-index:1;
     position:absolute;
     left:50%;
     top:50%;
     transform:translateY(-50%) translateX(-50%);
     cursor:url('img/grab.png'), auto;
+}
+.album-container:active{
+    cursor:url('img/grabbing.png'), auto;
 }
 .album-cover{
     width:100%;
@@ -289,6 +319,9 @@ section#album:after{
     cursor:url('img/grab.png'), auto;
     transition:transform 100ms;
 }
+.polaroids > div:active{
+    cursor:url('img/grabbing.png'), auto;
+}
 .polaroids img{
     width:100%;
     transition:transform 100ms linear;
@@ -345,7 +378,7 @@ div.img17{
     color:var(--green);
     /* font-size:1em; */
     /* letter-spacing:-0.05em; */
-    padding:6px;
+    padding:var(--margin);
 }
 #toggle-album{
     top:auto;
@@ -382,9 +415,10 @@ div.img17{
     cursor:pointer;
 }
 
-.page-open #toggle-album, .page-open #toggle-film{
-    color:white;
+.page-open #toggle-album, .page-open #toggle-film, #toggle-film:hover,#toggle-album:hover{
+    color:var(--grey);
 }
+
 
 .film-open #logo {
     top:calc(100vh - 50px);
@@ -401,6 +435,7 @@ div.img17{
     font-weight:bold;
     margin:0px;
     letter-spacing:0;
+    transform: translateY(-0.2em);
     /* position:relative; */
     /* top:-5px; */
 }
@@ -434,7 +469,38 @@ p.small{
     display:block;
 }
 
-
-body > *:not(.CANVAS){
-    visibility:hidden;
+@media screen and (max-width: 850px){
+    ul{
+        column-count:1;
+        font-size:17px;
+    }
+    #album button{
+        font-size:17px;
+    }
+    .album-container{
+        width:calc(100% - var(--margin)*2);
+        max-width:500px;
+        min-width:auto;
+        /* margin:var(--margin); */
+    }
+    #toggle-film, #toggle-album{
+        font-size:17px;
+    }
+    #logo{
+        min-width:auto;
+    }
+    #credits > div{
+        column-count:1;
+        font-size:17px;
+    }
+    .film-container{
+        width:calc(100vw - var(--margin)*2);
+        height:calc(67vw - var(--margin)*2);
+    }
+    .listen-links{
+        flex-wrap:wrap;
+    }
+    .listen-links a{
+        width: calc(50% - 28px);
+    }
 }
