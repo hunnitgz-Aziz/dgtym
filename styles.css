@@ -419,11 +419,20 @@ div.img17{
     pointer-events:none;
 }
 
-#logo:before{
-    content:'url(/img/Grey_Letters_DGTYM.png)';
-    width:90vw;
-    position:absolute;
-    display:block;
+#logo .logo{
+    width:100%;
+}
+
+.letter{
+    width: 12%;
+    position: absolute;
+    mix-blend-mode: lighten;
+    left: 37%;
+    top: 29%;
+    z-index: 1;
+    opacity: 0.7;
+    border-radius: 15%;
+    transform: rotate(-10deg)
 }
 
 @keyframes animateIn {
