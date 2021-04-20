@@ -20,7 +20,8 @@ function showFilmSection(){
     document.body.classList.add("page-open");
     document.body.classList.remove("album-open");
     document.body.classList.add("film-open");
-    logo.src="/img/DGTYM_logo_Grey.png"
+    logo.querySelector(".logo").src="/img/DGTYM_logo_Grey.png";
+    document.querySelector(".letter").style.display = "none";
 }
 function showAlbumSection(){
     filmSection.style.transform = "translateY(-100%)";
@@ -30,7 +31,8 @@ function showAlbumSection(){
     document.body.classList.add("page-open");
     document.body.classList.add("album-open");
     document.body.classList.remove("film-open");
-    logo.src="/img/DGTYM_logo_Grey.png"
+    logo.querySelector(".logo").src="/img/DGTYM_logo_Grey.png";
+    document.querySelector(".letter").style.display = "none";
 }
 function showMainSection(){
     filmSection.style.transform = "translateY(-100%)";
@@ -38,7 +40,8 @@ function showMainSection(){
     document.body.classList.remove("page-open");
     document.body.classList.remove("album-open");
     document.body.classList.remove("film-open");
-    logo.src="/img/DGTYM_logo_Green.png"
+    logo.querySelector(".logo").src="/img/DGTYM_logo_Green.png"
+    document.querySelector(".letter").style.display = "block";
 }
 
 logo.onclick=function(){showMainSection()}
@@ -79,11 +82,6 @@ for (let img of images){
   img.style.animationDelay = Math.random() + "s";
 }
 
-// left: 517px;
-// top: -54px;
-
-// left: 34.5819vw; 
-// top: -6vh; 
 
 
 

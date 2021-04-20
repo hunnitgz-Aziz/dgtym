@@ -12,6 +12,7 @@ html{
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
+    
 }
 
 body{
@@ -23,7 +24,9 @@ body{
     line-height:1;
     letter-spacing:-0.04em;
     /* background: #201f21; */
-    background-image:url(/img/Website_Background_Black.jpg)
+    background-color:black;
+    background-image:url(https://res.cloudinary.com/topazjones/image/upload/c_scale,w_1500/v1618958828/DGTYM-BGs/Website_Background_Black_i7zrgb.jpg);
+    background-repeat:repeat;
 }
 button{
     font-size:2vw;
@@ -355,7 +358,7 @@ div.img2 {
     width: 18vw;
     top: 46vw;
     left: 10vh;
-    /* animation: animateIn 300ms both ease-out; */
+    animation: animateIn 300ms both ease-out;
 }
 div.img4{display:none}
 div.img5{top:100vw;left:0px;}
