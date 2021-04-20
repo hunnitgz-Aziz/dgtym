@@ -330,11 +330,31 @@ section#album:after{
     transform:scale(1.05);
 }
 
+.video1{
+    position:fixed;
+    left:10%;
+    top:10%;
+    mix-blend-mode: lighten;
+    background-blend-mode: lighten;
+    width: 450px;
+    z-index:0;;
+}
+.video2{
+    position:fixed;
+    bottom:2%;
+    right:2%;
+    mix-blend-mode: lighten;
+    background-blend-mode: lighten;
+    width: 450px;
+    z-index:0;;
+}
+
 div.img2 {
     transform: rotate(95deg);
     width: 18vw;
     top: 46vw;
     left: 10vh;
+    animation: animateIn 300ms both ease-out;
 }
 div.img4{display:none}
 div.img5{top:100vw;left:0px;}
@@ -403,7 +423,13 @@ div.img17{
     width:90vw;
     position:absolute;
     display:block;
-    
+}
+
+@keyframes animateIn {
+    0%{opacity:0;width:500px;filter:blur(20px)}
+    1%{opacity:1;}
+    80%{width:270px;}
+    100%{opacity:1;width:270px;filter:blur(0px)}
 }
 
 .page-open #logo {

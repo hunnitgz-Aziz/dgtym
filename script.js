@@ -61,13 +61,21 @@ document.addEventListener("mousemove", function(e){
         c.style.zIndex = 8;
         c.style.pointerEvents = "auto";
     }
+
+    let moveX = map(e.clientX,0,window.innerWidth,-5,5);
+    let moveY = map(e.clientY,0,window.innerHeight,-5,5)
+
+    document.querySelector(".polaroids").style.transform = "translateX("+moveX+"px) translateY("+moveY+"px)"
+
+
 })
 
-// for (let img of images){
-//   img.style.left = Math.random()*100 + "%";
-//   img.style.top = Math.random()*100 + "%";
-//   img.style.transform = "rotate("+(Math.random()*5 + 87.5)+"deg)" 
-// }
+for (let img of images){
+  // img.style.left = Math.random()*100 + "%";
+  // img.style.top = Math.random()*100 + "%";
+  // img.style.transform = "rotate("+(Math.random()*5 + 87.5)+"deg)" 
+  img.style.animationDelay = Math.random() + "s";
+}
 
 // document.onmousemove=function(e){
     // console.log(e.target);
@@ -247,3 +255,8 @@ function stopDrag(e) {
 }
 
 resizer.addEventListener('mousedown', initDrag, false);
+
+
+function map(value, low1, high1, low2, high2) {
+    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+}
