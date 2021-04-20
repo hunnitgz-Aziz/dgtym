@@ -75,8 +75,9 @@ document.addEventListener("mousemove", function(e){
 
 for (let img of images){
   // console.log(parseInt(img.style.left));
-  img.style.left = pxToVw(parseInt(img.style.left)) + "vw";
+  img.style.left = pxToVh(parseInt(img.style.left)) + "vh";
   img.style.top = pxToVh(parseInt(img.style.top)) + "vh";
+
   // img.style.top = Math.random()*100 + "%";
   // img.style.transform = "rotate("+(Math.random()*5 + 87.5)+"deg)" 
   img.style.animationDelay = Math.random() + "s";
