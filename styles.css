@@ -289,7 +289,7 @@ section#album:after{
 }
 
 .polaroids-container{
-    overflow:scroll;
+    overflow-x:scroll;
     height:calc(100vw - 0px);
     width:calc(100vh - 0px);
     margin:0px;
@@ -306,7 +306,7 @@ section#album:after{
 
 .polaroids{
     /* background:red; */
-    height:300vw;
+    height:500vw;
     position:relative;
 }
 

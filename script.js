@@ -11,6 +11,7 @@ let filmContainer = document.querySelector('.film-container');
 let albumContainer = document.querySelector('.album-container');
 let resizer = document.getElementById("resizer");
 
+
 function showFilmSection(){
     filmSection.style.transform = "translateY(0px)";
     albumSection.style.transform = "translateY(100%)";
@@ -61,6 +62,12 @@ document.addEventListener("mousemove", function(e){
         c.style.pointerEvents = "auto";
     }
 })
+
+// for (let img of images){
+//   img.style.left = Math.random()*100 + "%";
+//   img.style.top = Math.random()*100 + "%";
+//   img.style.transform = "rotate("+(Math.random()*5 + 87.5)+"deg)" 
+// }
 
 // document.onmousemove=function(e){
     // console.log(e.target);
