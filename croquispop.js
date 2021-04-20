@@ -22,7 +22,7 @@ setTimeout(function(){
 
 croquis.setTool(brush);
 croquis.setToolStabilizeLevel(10);
-croquis.setToolStabilizeWeight(0.4);
+croquis.setToolStabilizeWeight(0.1);
 
 window.onresize=function(){
     croquis.setCanvasSize(window.innerWidth, window.innerHeight);
