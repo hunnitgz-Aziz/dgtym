@@ -71,10 +71,30 @@ document.addEventListener("mousemove", function(e){
 })
 
 for (let img of images){
-  // img.style.left = Math.random()*100 + "%";
+  // console.log(parseInt(img.style.left));
+  img.style.left = pxToVw(parseInt(img.style.left)) + "vw";
+  img.style.top = pxToVh(parseInt(img.style.top)) + "vh";
   // img.style.top = Math.random()*100 + "%";
   // img.style.transform = "rotate("+(Math.random()*5 + 87.5)+"deg)" 
   img.style.animationDelay = Math.random() + "s";
+}
+
+// left: 517px;
+// top: -54px;
+
+// left: 34.5819vw; 
+// top: -6vh; 
+
+
+
+// left: 4.48161vw; top: 2.44444vh;
+
+
+function pxToVw(px){
+    return map(px, 0, window.innerWidth, 0, 100)
+}
+function pxToVh(px){
+    return map(px, 0, window.innerHeight, 0, 100)
 }
 
 // document.onmousemove=function(e){

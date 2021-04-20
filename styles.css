@@ -289,7 +289,7 @@ section#album:after{
 }
 
 .polaroids-container{
-    overflow-x:scroll;
+    overflow-y:scroll;
     height:calc(100vw - 0px);
     width:calc(100vh - 0px);
     margin:0px;
@@ -308,6 +308,7 @@ section#album:after{
     /* background:red; */
     height:500vw;
     position:relative;
+    overflow: hidden;
 }
 
 .polaroids > div{
@@ -354,7 +355,7 @@ div.img2 {
     width: 18vw;
     top: 46vw;
     left: 10vh;
-    animation: animateIn 300ms both ease-out;
+    /* animation: animateIn 300ms both ease-out; */
 }
 div.img4{display:none}
 div.img5{top:100vw;left:0px;}
