@@ -13,16 +13,16 @@ brush.setSize(7);
 brush.setColor('#b2afb1');
 brush.setSpacing(0.13);
 brush.setFlow(0.6);
-brush.setImage(document.getElementById("default-brush"));
+// brush.setImage(document.getElementById("default-brush"));
 setTimeout(function(){
-    brush.setImage(document.getElementById("default-brush"));
+    // brush.setImage(document.getElementById("default-brush"));
     updatePointer();
 },1000)
 
 
 croquis.setTool(brush);
 croquis.setToolStabilizeLevel(10);
-croquis.setToolStabilizeWeight(0.1);
+croquis.setToolStabilizeWeight(0.8);
 
 window.onresize=function(){
     croquis.setCanvasSize(window.innerWidth, window.innerHeight);
@@ -38,7 +38,7 @@ function canvasPointerDown(e) {
     setPointerEvent(e);
     var pointerPosition = getRelativePosition(e.clientX, e.clientY);
     if (pointerEventsNone)
-        canvasArea.style.setProperty('cursor', 'none');
+        // canvasArea.style.setProperty('cursor', 'none');
     if (e.pointerType === "pen" && e.button == 5)
         croquis.setPaintingKnockout(true);
     croquis.down(pointerPosition.x, pointerPosition.y, e.pointerType === "pen" ? e.pressure : 1);

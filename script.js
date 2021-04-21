@@ -5,11 +5,41 @@ let btnAlbum = document.getElementById("toggle-album");
 let lyricsBtns = document.querySelectorAll("#album button");
 let logo = document.getElementById("logo");
 let images = document.querySelectorAll(".polaroids > div");
-let c = document.querySelector("canvas");
+let c = document.querySelector(".CANVAS");
 let btnWatch = document.getElementById("watchFilm");
 let filmContainer = document.querySelector('.film-container');
 let albumContainer = document.querySelector('.album-container');
 let resizer = document.getElementById("resizer");
+let creditsLines = document.querySelectorAll("#credits i");
+let gifs = document.querySelectorAll(".gif");
+
+let mouseIsDown = false;
+
+let bgColors = ["orange", "purple", "green", "red"];
+
+function pickRandomColor(arr,excludeNum){
+    var randomColor = Math.floor(Math.random()*arr.length);
+    if(arr[randomColor]==excludeNum){
+        return pickRandomColor(arr,excludeNum);
+    }else{
+        return randomColor;
+    }
+}
+
+setTimeout(function(){
+  document.querySelector(".video1").style.display = "block";
+},2000)
+
+let colorClass = 2;
+
+
+let gif = gifs[Math.floor(Math.random()*gifs.length)];
+gif.style.display="block";
+setInterval(function(){
+    gif.style.display="none";
+    gif = gifs[Math.floor(Math.random()*gifs.length)];
+    gif.style.display="block";
+},5000)
 
 
 function showFilmSection(){
@@ -21,8 +51,40 @@ function showFilmSection(){
     document.body.classList.remove("album-open");
     document.body.classList.add("film-open");
     logo.querySelector(".logo").src="/img/DGTYM_logo_Grey.png";
-    document.querySelector(".letter").style.display = "none";
+    // document.querySelector(".letter").style.display = "none";
+    document.querySelector(".bg").style.display = "none";
+    
+    document.body.classList.remove(bgColors[colorClass]);
+    console.log(colorClass);
+    colorClass = pickRandomColor(bgColors,colorClass);
+    console.log(colorClass);
+    document.body.classList.add(bgColors[colorClass]);
+
+    for (let i of creditsLines){
+      
+      // if (i.getBoundingClientRect().top <= window.innerHeight){
+        i.style.animation="appearIn 1s "+Math.random()*2+"s linear both";
+        setTimeout(function(){
+          i.style.animation = "none";
+        },1000)
+      // }
+      
+      i.onmouseenter=function(){
+        i.style.animation="zoomIn 1s linear both";
+        setTimeout(function(){
+          i.style.animation = "none";
+        },1000)
+      }
+    }
+
 }
+// filmSection.onscroll=function(){
+//   for (let i of creditsLines){
+//       if (i.getBoundingClientRect().top <= window.innerHeight){
+//         i.style.animation="appearIn 1s "+Math.random()*2+"s linear both";
+//       } 
+//   }
+// }
 function showAlbumSection(){
     filmSection.style.transform = "translateY(-100%)";
     albumSection.style.transform = "translateY(0px)";
@@ -32,7 +94,14 @@ function showAlbumSection(){
     document.body.classList.add("album-open");
     document.body.classList.remove("film-open");
     logo.querySelector(".logo").src="/img/DGTYM_logo_Grey.png";
-    document.querySelector(".letter").style.display = "none";
+    // document.querySelector(".letter").style.display = "none";
+    document.querySelector(".bg").style.display = "none";
+
+    document.body.classList.remove(bgColors[colorClass]);
+    console.log(colorClass);
+    colorClass = pickRandomColor(bgColors,colorClass);
+    console.log(colorClass);
+    document.body.classList.add(bgColors[colorClass]);
 }
 function showMainSection(){
     filmSection.style.transform = "translateY(-100%)";
@@ -41,7 +110,8 @@ function showMainSection(){
     document.body.classList.remove("album-open");
     document.body.classList.remove("film-open");
     logo.querySelector(".logo").src="/img/DGTYM_logo_Green.png"
-    document.querySelector(".letter").style.display = "block";
+    // document.querySelector(".letter").style.display = "block";
+    document.querySelector(".bg").style.display = "block";
 }
 
 logo.onclick=function(){showMainSection()}
@@ -49,6 +119,11 @@ logo.onclick=function(){showMainSection()}
 for (let btn of lyricsBtns){
     btn.onclick=function(){
         this.classList.toggle("active");
+        if (this.innerHTML === "Hide Lyrics") {
+          this.innerHTML = "Show Lyrics";
+        } else {
+          this.innerHTML = "Hide Lyrics";
+        }
     }
 }
 
@@ -57,19 +132,23 @@ document.addEventListener("mousemove", function(e){
         let bounds = img.getBoundingClientRect();
         return e.clientY > bounds.top && e.clientY < bounds.bottom && e.clientX > bounds.left && e.clientX < bounds.right;
     });
+
     if (found){
         c.style.zIndex = 2;
         c.style.pointerEvents = "none";
+        // console.log("FOUND")
     } else {
-        c.style.zIndex = 8;
+        c.style.zIndex = 10000;
         c.style.pointerEvents = "auto";
+        // console.log("NOT FOUND")
     }
 
-    let moveX = map(e.clientX,0,window.innerWidth,-5,5);
-    let moveY = map(e.clientY,0,window.innerHeight,-5,5)
 
-    document.querySelector(".polaroids").style.transform = "translateX("+moveX+"px) translateY("+moveY+"px)"
-
+    if (!mouseIsDown){
+      let moveX = map(e.clientX,0,window.innerWidth,-5,5);
+      let moveY = map(e.clientY,0,window.innerHeight,-5,5)
+      document.querySelector(".polaroids").style.transform = "translateX("+moveX+"px) translateY("+moveY+"px)"
+    }
 
 })
 
@@ -139,6 +218,13 @@ function pxToVh(px){
 //     img.onmouseenter=function(){console.log("mouse enter")}
 // }
 
+document.addEventListener("mousedown", function(){
+  mouseIsDown = true;
+})
+document.addEventListener("mouseup", function(){
+  mouseIsDown = false;
+})
+
 
 //Make the DIV element draggagle:
 for (let img of images){
@@ -155,6 +241,7 @@ function dragElement(elmnt) {
   function dragMouseDown(e) {
     e = e || window.event;
     e.preventDefault();
+    
 
     if (e.target != resizer){
     // get the mouse cursor position at startup:
@@ -236,19 +323,19 @@ document.getElementById("main").onwheel=function(){
 
 
 // Play vimeo video on button click
-let playing = false;
-var videoRectangle = document.getElementById('videoRectangle');
-var iframe = videoRectangle.childNodes[0];
-var player = $f(iframe);
-btnWatch.onclick=function(){
-    if (!playing) {
-    player.api("play");
-    } else {
-    player.api("pause"); 
-    }
-    playing = playing ? false : true;
-    btnWatch.classList.toggle("watching");
-}
+// let playing = false;
+// var videoRectangle = document.getElementById('videoRectangle');
+// var iframe = videoRectangle.childNodes[0];
+// var player = $f(iframe);
+// btnWatch.onclick=function(){
+//     if (!playing) {
+//     player.api("play");
+//     } else {
+//     player.api("pause"); 
+//     }
+//     playing = playing ? false : true;
+//     btnWatch.classList.toggle("watching");
+// }
 
 
 // Resize video
@@ -276,6 +363,18 @@ function stopDrag(e) {
 resizer.addEventListener('mousedown', initDrag, false);
 
 
+var canvas = new fabric.Canvas('sheet');
+canvas.isDrawingMode = true;
+canvas.setHeight(window.innerHeight);
+canvas.setWidth(window.innerWidth);
+canvas.freeDrawingBrush.width = 3;
+canvas.freeDrawingBrush.color = "rgba(184, 185, 184,0.7)";
+console.log(canvas);
+
+
 function map(value, low1, high1, low2, high2) {
     return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
 }
+
+
+
