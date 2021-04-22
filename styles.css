@@ -879,7 +879,7 @@ p.small{
         left: 15vh !important;
     }
     div.img2:nth-child(odd),  div.img1:nth-child(odd) {
-        left: 65vh !important;
+        left: 75vh !important;
     }
     .polaroids{
         height: auto;
