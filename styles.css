@@ -866,7 +866,7 @@ p.small{
         animation:none;
         position:relative;
         display:flex;
-        margin:10vw;
+        margin:-10vw;
         top: auto !important;
     }
     .img2 img, .img1 img{
