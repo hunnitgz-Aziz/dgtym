@@ -891,4 +891,7 @@ p.small{
         pointer-events: none;
         user-select: none;
     }
+    #credits{
+        padding-top: 221px;
+    }
 }
