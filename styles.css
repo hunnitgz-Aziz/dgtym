@@ -861,13 +861,15 @@ p.small{
         bottom: 3px;
         transform: translateX(-50%);
     }
-    div.img2{
+    div.img2, div.img1{
         width:50vw;
         animation:none;
         position:relative;
         display:flex;
         margin:10vw;
         top: auto !important;
+    }
+    .img2 img, .img1 img{
         object-fit:contain;
     }
     div.img2:nth-child(even){
