@@ -863,6 +863,7 @@ p.small{
         top: auto !important;
         bottom: 3px !important;
         transform: translateX(-50%) !important;
+        position:fixed;
     }
     div.img2, div.img1{
         width:50vw;
