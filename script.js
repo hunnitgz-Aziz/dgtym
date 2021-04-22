@@ -1,9 +1,12 @@
+var lazyLoadInstance = new LazyLoad({
+  // Your custom settings go here
+});
 let filmSection = document.getElementById("film");
 let btnFilm = document.getElementById("toggle-film");
 let albumSection = document.getElementById("album");
 let btnAlbum = document.getElementById("toggle-album");
 let lyricsBtns = document.querySelectorAll("#album button");
-let logo = document.getElementById("logo");
+let logo = document.getElementById("logo-container");
 let images = document.querySelectorAll(".polaroids > div");
 let c = document.querySelector(".CANVAS");
 let btnWatch = document.getElementById("watchFilm");
@@ -38,6 +41,8 @@ gif.style.display="block";
 setInterval(function(){
     gif.style.display="none";
     gif = gifs[Math.floor(Math.random()*gifs.length)];
+    let this_src = gif.src;
+    gif.src = this_src;
     gif.style.display="block";
 },5000)
 
@@ -55,26 +60,18 @@ function showFilmSection(){
     document.querySelector(".bg").style.display = "none";
     
     document.body.classList.remove(bgColors[colorClass]);
-    console.log(colorClass);
+    // console.log(colorClass);
     colorClass = pickRandomColor(bgColors,colorClass);
-    console.log(colorClass);
+    // console.log(colorClass);
     document.body.classList.add(bgColors[colorClass]);
 
     for (let i of creditsLines){
       
       // if (i.getBoundingClientRect().top <= window.innerHeight){
-        i.style.animation="appearIn 1s "+Math.random()*2+"s linear both";
-        setTimeout(function(){
-          i.style.animation = "none";
-        },1000)
+        i.style.animation="appearIn 1s "+Math.random()*1+"s linear both";
       // }
       
-      i.onmouseenter=function(){
-        i.style.animation="zoomIn 1s linear both";
-        setTimeout(function(){
-          i.style.animation = "none";
-        },1000)
-      }
+      
     }
 
 }
@@ -98,9 +95,9 @@ function showAlbumSection(){
     document.querySelector(".bg").style.display = "none";
 
     document.body.classList.remove(bgColors[colorClass]);
-    console.log(colorClass);
+    // console.log(colorClass);
     colorClass = pickRandomColor(bgColors,colorClass);
-    console.log(colorClass);
+    // console.log(colorClass);
     document.body.classList.add(bgColors[colorClass]);
 }
 function showMainSection(){
@@ -138,7 +135,7 @@ document.addEventListener("mousemove", function(e){
         c.style.pointerEvents = "none";
         // console.log("FOUND")
     } else {
-        c.style.zIndex = 10000;
+        c.style.zIndex = 7;
         c.style.pointerEvents = "auto";
         // console.log("NOT FOUND")
     }
@@ -154,6 +151,8 @@ document.addEventListener("mousemove", function(e){
 
 for (let img of images){
   // console.log(parseInt(img.style.left));
+
+  console.log(pxToVh(parseInt(img.style.left)) );
   img.style.left = pxToVh(parseInt(img.style.left)) + "vh";
   img.style.top = pxToVh(parseInt(img.style.top)) + "vh";
 
@@ -363,13 +362,91 @@ function stopDrag(e) {
 resizer.addEventListener('mousedown', initDrag, false);
 
 
-var canvas = new fabric.Canvas('sheet');
-canvas.isDrawingMode = true;
-canvas.setHeight(window.innerHeight);
-canvas.setWidth(window.innerWidth);
-canvas.freeDrawingBrush.width = 3;
-canvas.freeDrawingBrush.color = "rgba(184, 185, 184,0.7)";
-console.log(canvas);
+// var canvas = new fabric.Canvas('sheet');
+// canvas.isDrawingMode = true;
+// canvas.setHeight(window.innerHeight);
+// canvas.setWidth(window.innerWidth);
+// canvas.freeDrawingBrush.width = 4;
+// canvas.freeDrawingBrush.color = "rgba(184, 185, 184,0.92)";
+// // console.log(canvas);
+
+
+var el = document.getElementById('sheet');
+var ctx = el.getContext('2d');
+var isDrawing;
+
+el.width = document.body.clientWidth; //document.width is obsolete
+el.height = window.innerHeight; //document.height is obsolete
+
+// el.onmousedown = function(e) {
+//   isDrawing = true;
+//   ctx.lineWidth = 1;
+//   ctx.strokeStyle = "rgba(184, 185, 184,0.6)";
+//   ctx.lineJoin = ctx.lineCap = 'round';
+//   ctx.shadowBlur = 1.5;
+//   ctx.shadowColor = 'rgba(184, 185, 184,0.6)';
+  
+//   ctx.moveTo(e.clientX, e.clientY);
+// };
+// el.onmousemove = function(e) {
+//   if (isDrawing) {
+//     ctx.lineTo(e.clientX, e.clientY);
+    
+//     ctx.stroke();
+//   }
+// };
+// el.onmouseup = function() {
+//   isDrawing = false;
+// };
+
+
+// DRAW TYPE 2
+
+ctx.strokeStyle = "rgba(184, 185, 184,0.6)";
+
+ctx.lineWidth = 2;
+ctx.lineJoin = ctx.lineCap = 'round';
+
+var isDrawing, lastPoint;
+
+el.onmousedown = function(e) {
+  isDrawing = true;
+  lastPoint = { x: e.clientX, y: e.clientY };
+};
+
+el.onmousemove = function(e) {
+  if (!isDrawing) return;
+
+  ctx.beginPath();
+  
+  ctx.globalAlpha = 1;
+  ctx.moveTo(lastPoint.x, lastPoint.y);
+  ctx.lineTo(e.clientX, e.clientY);
+  ctx.stroke();
+  
+  // ctx.moveTo(lastPoint.x - 4, lastPoint.y - 4);
+  // ctx.lineTo(e.clientX - 4, e.clientY - 4);
+  // ctx.stroke();
+  
+  ctx.moveTo(lastPoint.x - 1, lastPoint.y - 1);
+  ctx.lineTo(e.clientX - 1, e.clientY - 1);
+  ctx.stroke();
+  
+  ctx.moveTo(lastPoint.x + 1, lastPoint.y + 1);
+  ctx.lineTo(e.clientX + 1, e.clientY + 1);
+  ctx.stroke();
+  
+  // ctx.moveTo(lastPoint.x + 4, lastPoint.y + 4);
+  // ctx.lineTo(e.clientX + 4, e.clientY + 4);
+  // ctx.stroke();
+    
+  lastPoint = { x: e.clientX, y: e.clientY };
+};
+
+el.onmouseup = function() {
+  isDrawing = false;
+};
+
 
 
 function map(value, low1, high1, low2, high2) {

@@ -35,21 +35,25 @@ body.orange section{
     background-image:url(https://res.cloudinary.com/topazjones/image/upload/c_scale,w_1500/v1618958827/DGTYM-BGs/Website_Background_Orange_xoelgl.png);
 }
 body.orange #logo-orange{display:block}
+body.orange #toggle-film, body.orange #toggle-album{color:#a26f27}
 
 body.purple section{
     background-color:#7a7094;
     background-image:url(https://res.cloudinary.com/topazjones/image/upload/c_scale,w_1500/v1618958828/DGTYM-BGs/Website_Background_Purple_fuwlhg.png);
 }
 body.purple #logo-purple{display:block}
+body.purple #toggle-film, body.purple #toggle-album{color:#706788}
 body.green section{
     background-color:var(--green);
     background-image:url(https://res.cloudinary.com/topazjones/image/upload/c_scale,w_1500/v1618958828/DGTYM-BGs/Website_Background_Green_f0p9ni.png);
 }
 body.green #logo-green{display:block}
+body.green #toggle-film, body.green #toggle-album{color:var(--green)}
 body.red section{
     background-image:url(https://res.cloudinary.com/topazjones/image/upload/v1618958828/DGTYM-BGs/Website_Background_Red_rxdekn.png);
 }
 body.red #logo-red{display:block}
+body.red #toggle-film, body.red #toggle-album{color:#bb3810}
 button{
     font-size:2vw;
     line-height:0.95;
@@ -167,12 +171,12 @@ section{
     /* z-index:0; */
 }
 @keyframes appearIn{
-    0%{opacity:0;transform:translateY(3px)}
+    0%{opacity:0;transform:translateY(10px)}
     100%{opacity:1;transform:translateY(0px)}
 }
 @keyframes zoomIn{
-    0%{transform:scale(1.1);}
-    100%{transform:scale(1);}
+    /* 0%{transform:scale(1.1);}
+    100%{transform:scale(1);} */
     /* 0%{color:var(--grey);}
     100%{color:black;} */
 }
@@ -498,24 +502,35 @@ div.img17{
     bottom:0px;
 }
 
-#logo{
+#logo-container{
     position:fixed;
     top:50%;
     left:50%;
-    width:90vw;
+    /* width:90vw; */
     /* max-width:1000px; */
+    width:100vw;
+    height:100vh;
+    /* border:1px solid red; */
     min-width:500px;
     transform:translateY(-50%) translateX(-50%);
     z-index:0;
     transition: 300ms ease-in-out;
     pointer-events:none;
+
+    max-width: 1500px;
+
+    background-image:url(https://res.cloudinary.com/topazjones/image/upload/c_scale,w_1500/v1618958828/DGTYM-BGs/Website_Background_Black_i7zrgb.jpg);
 }
 
-#logo .logo{
-    width:100%;
+#logo-container .logo{
+    width:90%;
     z-index:1;
     position:relative;
     display:none;
+    max-width: 1500px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    left:50%;
 }
 
 
@@ -524,7 +539,7 @@ div.img17{
     position: absolute;
     mix-blend-mode: screen;
     z-index: 2;
-    opacity: 0.9;
+    /* opacity: 0.9; */
     display:none;
 }
 
@@ -607,6 +622,7 @@ div.img17{
     z-index: 0;
     width: 100vw;
     height: 100vh;
+    display:none;
 }
 .logo{}
 
@@ -627,7 +643,7 @@ div.img17{
 }
 
 .page-open #toggle-album, .page-open #toggle-film, #toggle-film:hover,#toggle-album:hover{
-    color:var(--grey);
+    color:var(--grey) !important;
 }
 
 .page-open .gif, .page-open .video1, .page-open .video2, .page-open #logo-green, .page-open #logo-red, .page-open #logo-orange, .page-open #logo-purple{
