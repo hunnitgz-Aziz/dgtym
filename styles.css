@@ -429,14 +429,17 @@ section#album:after{
 
 .video1{
     position:fixed;
-    right: 10%;
-    bottom: 9%;
+    /* right: 10%; */
+    /* bottom: 9%; */
     mix-blend-mode: screen;
     background-blend-mode: screen;
-    width: 450px;
+    width: 400px;
     z-index:2;;
-    left: 3%;
-    top: -29%;
+    /* left: 3%; */
+    /* top: -29%; */
+    top: 10%;
+    left: 9%;
+    
     display:none;
 
 }
@@ -446,8 +449,10 @@ section#album:after{
     right: -3%;
     mix-blend-mode: screen;
     background-blend-mode: screen;
-    width: 450px;
+    width: 400px;
     z-index:2;;
+    bottom: 25%;
+    right: 3%;
 }
 
 div.img2 {
