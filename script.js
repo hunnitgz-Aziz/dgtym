@@ -17,6 +17,28 @@ let resizer = document.getElementById("resizer");
 let creditsLines = document.querySelectorAll("#credits i");
 let gifs = document.querySelectorAll(".gif");
 
+let switchTime = new Date('April 22, 2021 23:59:59').getTime();
+let rightNow = new Date().getTime();
+
+
+// var dateInPast = function(firstDate, secondDate) {
+//   if (firstDate.setHours(0, 0, 0, 0) <= secondDate.setHours(0, 0, 0, 0)) {
+//     return true;
+//   }
+//   return false;
+// };
+
+// console.log(switchTime, rightNow);
+
+if (rightNow < switchTime){
+  document.querySelector(".film-container").classList.add("for-youtube-stream");
+  console.log("NOT YET")
+} else {
+  console.log("past")
+}
+
+// console.log(switchTime, now);
+
 let mouseIsDown = false;
 
 let bgColors = ["orange", "purple", "green", "red"];
@@ -47,7 +69,7 @@ let interval = 4500;
 
 if (gif.classList.contains("songname")){
   interval = 8000;
-  console.log("SONG NAME")
+  // console.log("SONG NAME")
 } 
 
 setInterval(function(){
@@ -379,7 +401,7 @@ function initDrag(e) {
 function doDrag(e) {
    filmContainer.style.width = (startWidth + e.clientX - startX) + 'px';
    filmContainer.style.height = (startHeight - e.clientY + startY) + 'px';
-   console.log(startHeight, e.clientY, startY)
+  //  console.log(startHeight, e.clientY, startY)
 }
 
 function stopDrag(e) {
