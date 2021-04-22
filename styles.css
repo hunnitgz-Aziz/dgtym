@@ -810,7 +810,7 @@ p.small{
         font-size:18px;
     }
     .album-container{
-        width:calc(100% - var(--margin)*2);
+        width: calc(84% - var(--margin)*2);
         max-width:500px;
         min-width:auto;
         /* margin:var(--margin); */
