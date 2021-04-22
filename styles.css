@@ -437,8 +437,8 @@ section#album:after{
     z-index:2;;
     /* left: 3%; */
     /* top: -29%; */
-    top: 10%;
-    left: 9%;
+    top: 20%;
+    left: 14%;
     
     display:none;
 
@@ -579,7 +579,6 @@ div.img17{
     left: 27%;
     top: 45%;
 }
-
 #Underline_06{
     bottom: 12%;
     left: 30%;
@@ -713,6 +712,41 @@ p.small{
 
 #album button.active + div{
     display:block;
+}
+
+
+/* Max width for logo */
+@media screen and (min-width: 1667px){
+    #G_01,#G_02,#G_03,#G_04{
+        width: 230px;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-140px) translateX(-200px);
+    }
+    #D_01,#D_02,#D_03,#D_04{
+        width: 230px;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-220px) translateX(-700px);
+    }
+    #T_01,#T_02,#T_03,#T_04{
+        width: 240px;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-140px) translateX(20px);
+    }
+    #M_01,#M_02,#M_03,#M_04{
+        width: 240px;
+        left: 50%;
+        top: 50%;
+        transform: translateY(30px) translateX(20px);
+    }
+    #Y_01,#Y_02,#Y_03,#Y_04{
+        width: 180px;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-60px) translateX(-390px);
+    }
 }
 
 @media screen and (max-width: 850px){
