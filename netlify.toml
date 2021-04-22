@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/test"
+  to = "https://taliacotton.com/"
+  status = 301
+  force = true
+  query = {path = ":path"}
