@@ -844,7 +844,7 @@ p.small{
         flex-wrap:wrap;
     }
     .logo{
-        top: calc(50% - 30px);
+        top: calc(50% - 60px);
     }
     .listen-links a{
         /* width: calc(50% - 28px); */
