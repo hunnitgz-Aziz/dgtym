@@ -798,6 +798,10 @@ p.small{
 }
 
 @media screen and (max-width: 850px){
+    body {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
     ul{
         column-count:1;
         font-size:18px;
