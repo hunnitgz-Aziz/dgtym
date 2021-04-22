@@ -51,12 +51,17 @@ if (gif.classList.contains("songname")){
 } 
 
 setInterval(function(){
-    gif.style.display="none";
+    if (!gif.classList.contains("songname")){
+      gif.style.display="none";
+    } else {
+      let _this = gif;
+      setTimeout(function(){
+        _this.style.display="none";
+      },3000)
+    }
+    
     gif = gifs[Math.floor(Math.random()*gifs.length)];
-    if (gif.classList.contains("songname")){
-      interval = 8000;
-      console.log("SONG NAME")
-    } 
+    
     let this_src = gif.src;
     gif.src = "";
     gif.src = this_src;
