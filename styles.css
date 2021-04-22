@@ -453,6 +453,8 @@ section#album:after{
 div.img2 {
     transform: rotate(95deg);
     width: 18vw;
+    max-width:340px;
+    min-width:100px;
     top: 46vw;
     left: 10vh;
     animation: animateIn 300ms both ease-out;
@@ -631,10 +633,10 @@ div.img17{
 .logo{}
 
 @keyframes animateIn {
-    0%{opacity:0;width:500px;filter:blur(0px)}
+    0%{opacity:0;width:25vw;filter:blur(2px)}
     1%{opacity:1;}
-    80%{width:270px;}
-    100%{opacity:1;width:270px;filter:blur(0px)}
+    50%{filter:blur(0px)}
+    100%{opacity:1;width:18vw;filter:blur(0px)}
 }
 
 .page-open #logo-container .logo {
