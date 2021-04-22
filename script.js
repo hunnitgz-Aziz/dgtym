@@ -7,6 +7,7 @@ let albumSection = document.getElementById("album");
 let btnAlbum = document.getElementById("toggle-album");
 let lyricsBtns = document.querySelectorAll("#album button");
 let logo = document.getElementById("logo-container");
+// let logos = document.querySelectorAll(".logo");
 let images = document.querySelectorAll(".polaroids > div");
 let c = document.querySelector(".CANVAS");
 let btnWatch = document.getElementById("watchFilm");
@@ -55,7 +56,7 @@ function showFilmSection(){
     document.body.classList.add("page-open");
     document.body.classList.remove("album-open");
     document.body.classList.add("film-open");
-    logo.querySelector(".logo").src="/img/DGTYM_logo_Grey.png";
+    // logo.querySelector(".logo").src="/img/DGTYM_logo_Grey.png";
     // document.querySelector(".letter").style.display = "none";
     document.querySelector(".bg").style.display = "none";
     
@@ -90,7 +91,7 @@ function showAlbumSection(){
     document.body.classList.add("page-open");
     document.body.classList.add("album-open");
     document.body.classList.remove("film-open");
-    logo.querySelector(".logo").src="/img/DGTYM_logo_Grey.png";
+    // logo.querySelector(".logo").src="/img/DGTYM_logo_Grey.png";
     // document.querySelector(".letter").style.display = "none";
     document.querySelector(".bg").style.display = "none";
 
@@ -106,7 +107,7 @@ function showMainSection(){
     document.body.classList.remove("page-open");
     document.body.classList.remove("album-open");
     document.body.classList.remove("film-open");
-    logo.querySelector(".logo").src="/img/DGTYM_logo_Green.png"
+    // logo.querySelector(".logo").src="/img/DGTYM_logo_Green.png"
     // document.querySelector(".letter").style.display = "block";
     document.querySelector(".bg").style.display = "block";
 }
@@ -152,9 +153,10 @@ document.addEventListener("mousemove", function(e){
 for (let img of images){
   // console.log(parseInt(img.style.left));
 
-  console.log(pxToVh(parseInt(img.style.left)) );
-  img.style.left = pxToVh(parseInt(img.style.left)) + "vh";
-  img.style.top = pxToVh(parseInt(img.style.top)) + "vh";
+  // console.log(pxToVh(parseInt(img.style.left)) );
+  // img.style.left = pxToVh(parseInt(img.style.left)) + "vh";
+  // img.style.top = pxToVh(parseInt(img.style.top)) + "vh";
+
 
   // img.style.top = Math.random()*100 + "%";
   // img.style.transform = "rotate("+(Math.random()*5 + 87.5)+"deg)" 
@@ -405,6 +407,9 @@ el.height = window.innerHeight; //document.height is obsolete
 ctx.strokeStyle = "rgba(184, 185, 184,0.6)";
 
 ctx.lineWidth = 2;
+ctx.lineJoin = ctx.lineCap = 'round';
+ctx.shadowBlur = 1;
+ctx.shadowColor = 'rgba(184, 185, 184,0.6)';
 ctx.lineJoin = ctx.lineCap = 'round';
 
 var isDrawing, lastPoint;

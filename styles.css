@@ -306,11 +306,15 @@ section{
     font-family: 'Maax';
     font-weight:bold;
     padding-top:6px;
+    
 }
 .listen-links a:hover{
     color:var(--grey);
     border-color:black;
     background:black;
+}
+.listen-links a span{
+    font-size:2vw;
 }
 
 .album-container{
@@ -504,20 +508,19 @@ div.img17{
 
 #logo-container{
     position:fixed;
-    top:50%;
-    left:50%;
+    /* top:50%; */
+    /* left:50%; */
     /* width:90vw; */
     /* max-width:1000px; */
     width:100vw;
     height:100vh;
     /* border:1px solid red; */
-    min-width:500px;
-    transform:translateY(-50%) translateX(-50%);
+    /* min-width:500px; */
+    /* transform:translateY(-50%) translateX(-50%); */
     z-index:0;
-    transition: 300ms ease-in-out;
     pointer-events:none;
 
-    max-width: 1500px;
+    /* max-width: 1500px; */
 
     background-image:url(https://res.cloudinary.com/topazjones/image/upload/c_scale,w_1500/v1618958828/DGTYM-BGs/Website_Background_Black_i7zrgb.jpg);
 }
@@ -525,12 +528,13 @@ div.img17{
 #logo-container .logo{
     width:90%;
     z-index:1;
-    position:relative;
+    position:absolute;
     display:none;
     max-width: 1500px;
     top: 50%;
     transform: translateY(-50%) translateX(-50%);
     left:50%;
+    transition: 300ms ease-in-out;
 }
 
 
@@ -633,7 +637,7 @@ div.img17{
     100%{opacity:1;width:270px;filter:blur(0px)}
 }
 
-.page-open #logo {
+.page-open #logo-container .logo {
     z-index: 4;
     top: 50px;
     min-width: inherit;
