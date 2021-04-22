@@ -884,11 +884,17 @@ p.small{
     .polaroids{
         height: auto;
     }
-    .video2{
-        bottom:40px;
+    .video2 {
+        bottom: 14vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+    }
+    .video1{
+        width:200px;
+        top:14vh;
         left:50%;
-        transform:translateX(-50%);
-        width:300px;
+        transform: translateX(-50%);
     }
     .album-container{
         left: 50vw;
@@ -922,7 +928,7 @@ p.small{
         top:49%;
     }
     #Circling_01,#Circling_02,#Circling_03,#Underline_01,#Underline_02,#Underline_03,#Underline_04,#Underline_05,#Underline_06{
-        display:none;
+        display:none !important;
     }
     .songname{
         max-width:80vw !important;
