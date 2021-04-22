@@ -579,13 +579,8 @@ div.img17{
     left: 27%;
     top: 45%;
 }
-#Underline_06{
-    bottom: 12%;
-    left: 30%;
-}
-#Underline_04{
-    bottom: 13%;
-    right: 4%;
+#Underline_01{
+
 }
 
 #Song_06{
@@ -618,11 +613,31 @@ div.img17{
     left: 20%;
     width: 250px;
 }
-#Circling_01{
-    top: -41%;
-    left: 42%;
-    width: 200px;
+#Circling_02, #Circling_01{
+    top: -50px;
+    left: calc(50% - 150px);
     transform: rotate(45deg);
+}
+#Circling_03 {
+    bottom: -60px;
+    left: 43vw;
+}
+#Underline_01, #Underline_04 {
+    left: 50%;
+    top: 50%;
+    transform: translateX(200px) translateY(100px);
+}
+
+#Underline_02, #Underline_03, #Underline_05 {
+    left: 50%;
+    top: 50%;
+    transform: translateX(-300px) translateY(100px);
+}
+
+#Underline_06 {
+    left: 50%;
+    top: 50%;
+    transform: translateX(-540px) translateY(-80px);
 }
 
 .bg{
