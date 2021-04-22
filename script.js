@@ -45,7 +45,7 @@ setInterval(function(){
     let this_src = gif.src;
     gif.src = this_src;
     gif.style.display="block";
-},5000)
+},4500)
 
 
 function showFilmSection(){

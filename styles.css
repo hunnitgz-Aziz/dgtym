@@ -429,8 +429,8 @@ section#album:after{
 
 .video1{
     position:fixed;
-    left: -12%;
-    top: -9%;
+    right: 10%;
+    bottom: 9%;
     mix-blend-mode: screen;
     background-blend-mode: screen;
     width: 450px;
@@ -550,29 +550,29 @@ div.img17{
 }
 
 #G_01,#G_02,#G_03,#G_04{
-    width: 17%;
-    left: 35%;
-    top: 24%;
+    width: 15%;
+    left: 37%;
+    top: 36%;
 }
 #D_01,#D_02,#D_03,#D_04{
-    width: 17%;
-    left: 2%;
-    top: 12%;
+    width: 15%;
+    left: 8%;
+    top: 30%;
 }
 #T_01,#T_02,#T_03,#T_04{
-    width: 17%;
+    width: 15%;
     left: 51%;
-    top: 28%;
+    top: 39%;
 }
 #M_01,#M_02,#M_03,#M_04{
-    width: 17%;
-    left: 50%;
-    top: 54%;
+    width: 15%;
+    left: 49%;
+    top: 52%;
 }
 #Y_01,#Y_02,#Y_03,#Y_04{
-    width: 15%;
-    left: 20%;
-    top: 34%;
+    width: 10%;
+    left: 27%;
+    top: 45%;
 }
 
 #Underline_06{
