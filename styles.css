@@ -945,6 +945,7 @@ p.small{
         bottom: 30px;
         left: 18vw;
         width: 226px;
+        display:none !important;
     }
     #Song_04{
         width:210px;
