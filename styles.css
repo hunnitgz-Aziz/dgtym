@@ -828,6 +828,37 @@ p.small{
         flex-wrap:wrap;
     }
     .listen-links a{
-        width: calc(50% - 28px);
+        /* width: calc(50% - 28px); */
+        width:100%;
+    }
+    .listen-links a span{
+        font-size:1em;
+    }
+    .album-open #logo-container .logo{
+        width: 180px;
+        top: 30px;
+    }
+    .film-open #logo-container .logo{
+        width: 180px;
+        top: calc(100vh - 30px);
+    }
+    div.img2{
+        width:50vw;
+        animation:none;
+        position:relative;
+        display:flex;
+        margin:30vw;
+    }
+    div.img2:nth-child(even){
+        left:-20vh
+    }
+    .polaroids{
+        height: auto;
+    }
+    .video2{
+        bottom:40px;
+        left:50%;
+        transform:translateX(-50%);
+        width:300px;
     }
 }
