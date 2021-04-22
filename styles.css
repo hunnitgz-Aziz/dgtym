@@ -829,7 +829,12 @@ p.small{
         font-size:18px;
     }
     .film-container{
-        width:calc(100vw - var(--margin)*2);
+        width: calc(100vw - var(--margin)*2);
+        /* top: 50%; */
+        transform: none;
+        /* height: calc(67vw - var(--margin)*2); */
+        top: calc(var(--margin) + 30px);
+        left: var(--margin);
         /* height:calc(67vw - var(--margin)*2); */
     }
     .listen-links{
