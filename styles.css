@@ -882,7 +882,7 @@ p.small{
     }
     .album-container{
         left: 50vw;
-        top: calc(50vh - 50px);
+        top: calc(50vh - 30px);
     }
     p.small{
         font-size:15px;
