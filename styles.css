@@ -308,6 +308,7 @@ section{
     font-family: 'Maax';
     font-weight:bold;
     padding-top:6px;
+    padding: 10px 10px 15px;
     
 }
 .listen-links a:hover{
@@ -316,7 +317,7 @@ section{
     background:black;
 }
 .listen-links a span{
-    font-size:2vw;
+    font-size:1.7vw;
 }
 
 .album-container{
@@ -448,14 +449,14 @@ section#album:after{
 }
 .video2{
     position:fixed;
-    bottom: -28%;
-    right: -3%;
+    /* bottom: -28%; */
+    /* right: -3%; */
     mix-blend-mode: screen;
     background-blend-mode: screen;
     width: 400px;
     z-index:2;;
-    bottom: 25%;
-    right: 3%;
+    bottom: 20%;
+    right: 9%;
 }
 
 div.img2 {
@@ -561,7 +562,7 @@ div.img17{
 }
 
 .album-open #logo-container .logo{
-    top:calc(var(--margin)*3);
+    top:calc(var(--margin)*2.68);
     z-index: 4;
     min-width: inherit;
     width: 270px;
@@ -664,8 +665,8 @@ div.img17{
 }
 
 #Underline_06 {
-    left: 50%;
-    top: 50%;
+    left: 43%;
+    top: 55%;
     transform: translateX(-540px) translateY(-80px);
 }
 
@@ -748,7 +749,7 @@ div.img17{
 
 
 p.small{
-    font-size:14px;
+    font-size: 16px;
     letter-spacing: -0.05em;
     padding-top:1em;
 }
@@ -799,10 +800,10 @@ p.small{
 @media screen and (max-width: 850px){
     ul{
         column-count:1;
-        font-size:17px;
+        font-size:18px;
     }
     #album button{
-        font-size:17px;
+        font-size:18px;
     }
     .album-container{
         width:calc(100% - var(--margin)*2);
@@ -811,14 +812,14 @@ p.small{
         /* margin:var(--margin); */
     }
     #toggle-film, #toggle-album{
-        font-size:17px;
+        font-size:18px;
     }
     #logo{
         min-width:auto;
     }
     #credits > div{
         column-count:1;
-        font-size:17px;
+        font-size:18px;
     }
     .film-container{
         width:calc(100vw - var(--margin)*2);

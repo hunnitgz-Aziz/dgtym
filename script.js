@@ -43,13 +43,20 @@ let colorClass = 2;
 
 let gif = gifs[Math.floor(Math.random()*gifs.length)];
 gif.style.display="block";
+let interval = 4500;
+
+if (gif.classList.contains("songname")){
+  interval = 8000;
+} 
+
 setInterval(function(){
     gif.style.display="none";
     gif = gifs[Math.floor(Math.random()*gifs.length)];
     let this_src = gif.src;
+    gif.src = "";
     gif.src = this_src;
     gif.style.display="block";
-},4500)
+},interval)
 
 
 function showFilmSection(){
@@ -69,6 +76,8 @@ function showFilmSection(){
     colorClass = pickRandomColor(bgColors,colorClass);
     // console.log(colorClass);
     document.body.classList.add(bgColors[colorClass]);
+
+    ctx.clearRect(0, 0, el.width, el.height);
 
     for (let i of creditsLines){
       
@@ -104,6 +113,9 @@ function showAlbumSection(){
     colorClass = pickRandomColor(bgColors,colorClass);
     // console.log(colorClass);
     document.body.classList.add(bgColors[colorClass]);
+
+    ctx.clearRect(0, 0, el.width, el.height);
+
 }
 function showMainSection(){
     filmSection.style.transform = "translateY(-100%)";
