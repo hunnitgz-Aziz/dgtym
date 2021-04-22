@@ -47,11 +47,16 @@ let interval = 4500;
 
 if (gif.classList.contains("songname")){
   interval = 8000;
+  console.log("SONG NAME")
 } 
 
 setInterval(function(){
     gif.style.display="none";
     gif = gifs[Math.floor(Math.random()*gifs.length)];
+    if (gif.classList.contains("songname")){
+      interval = 8000;
+      console.log("SONG NAME")
+    } 
     let this_src = gif.src;
     gif.src = "";
     gif.src = this_src;
