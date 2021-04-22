@@ -887,4 +887,8 @@ p.small{
     p.small{
         font-size:15px;
     }
+    .album-cover{
+        pointer-events: none;
+        user-select: none;
+    }
 }
