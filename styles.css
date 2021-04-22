@@ -150,6 +150,8 @@ section{
     left:0px;
     position:fixed;
     transition: transform 300ms ease-in-out;
+    background-size:1200px;
+    background-repeat:repeat;
 }
 
 
@@ -530,6 +532,8 @@ div.img17{
     /* max-width: 1500px; */
 
     background-image:url(https://res.cloudinary.com/topazjones/image/upload/c_scale,w_1500/v1618958828/DGTYM-BGs/Website_Background_Black_i7zrgb.jpg);
+    background-size:1200px;
+    background-repeat:repeat;
 }
 
 #logo-container .logo{
