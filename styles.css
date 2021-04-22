@@ -843,6 +843,9 @@ p.small{
     .listen-links{
         flex-wrap:wrap;
     }
+    .logo{
+        top: calc(50% - 30px);
+    }
     .listen-links a{
         /* width: calc(50% - 28px); */
         width:100%;
