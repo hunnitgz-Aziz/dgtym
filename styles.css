@@ -893,5 +893,6 @@ p.small{
     }
     #credits{
         padding-top: 221px;
+        height: calc(100vh - var(--margin) - 221px);
     }
 }
