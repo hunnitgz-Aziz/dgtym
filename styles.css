@@ -330,6 +330,7 @@ section{
     transform:translateY(-50%) translateX(-50%);
     /* cursor:url('img/grab.png'), auto; */
     cursor:grab;
+    min-width: 42vw;
 }
 .listen-links span{
     font-family: 'Maax';
