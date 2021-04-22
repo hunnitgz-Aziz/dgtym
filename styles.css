@@ -818,6 +818,9 @@ p.small{
     #toggle-film, #toggle-album{
         font-size:18px;
     }
+    #toggle-film{
+        top:1px;
+    }
     #logo{
         min-width:auto;
     }
@@ -827,7 +830,7 @@ p.small{
     }
     .film-container{
         width:calc(100vw - var(--margin)*2);
-        height:calc(67vw - var(--margin)*2);
+        /* height:calc(67vw - var(--margin)*2); */
     }
     .listen-links{
         flex-wrap:wrap;
@@ -845,7 +848,9 @@ p.small{
     }
     .film-open #logo-container .logo{
         width: 180px;
-        top: calc(100vh - 30px);
+        top: auto;
+        bottom: 3px;
+        transform: translateX(-50%);
     }
     div.img2{
         width:50vw;
