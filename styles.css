@@ -583,6 +583,9 @@ div.img17{
     /* opacity: 0.9; */
     display:none;
 }
+.film-open #logo-container .logo{
+    z-index:1000000;
+}
 
 #G_01,#G_02,#G_03,#G_04{
     width: 15%;
