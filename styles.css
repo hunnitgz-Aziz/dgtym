@@ -868,6 +868,7 @@ p.small{
         display:flex;
         margin:10vw;
         top: auto !important;
+        object-fit:contain;
     }
     div.img2:nth-child(even){
         left:-20vh
@@ -895,5 +896,8 @@ p.small{
     #credits{
         padding-top: 221px;
         height: calc(100vh - var(--margin) - 221px);
+    }
+    canvas{
+        display:none;
     }
 }
