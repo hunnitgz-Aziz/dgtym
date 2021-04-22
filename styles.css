@@ -583,9 +583,6 @@ div.img17{
     /* opacity: 0.9; */
     display:none;
 }
-.film-open #logo-container .logo{
-    z-index:1000000;
-}
 
 #G_01,#G_02,#G_03,#G_04{
     width: 15%;
@@ -862,10 +859,10 @@ p.small{
         top: 30px;
     }
     .film-open #logo-container .logo{
-        width: 180px;
-        top: auto;
-        bottom: 3px;
-        transform: translateX(-50%);
+        width: 180px !important;
+        top: auto !important;
+        bottom: 3px !important;
+        transform: translateX(-50%) !important;
     }
     div.img2, div.img1{
         width:50vw;
