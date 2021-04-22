@@ -32,7 +32,11 @@ function pickRandomColor(arr,excludeNum){
 
 setTimeout(function(){
   document.querySelector(".video1").style.display = "block";
-},2000)
+},3000)
+
+setTimeout(function(){
+  document.querySelector(".video1").style.display = "none";
+},15000)
 
 let colorClass = 2;
 
