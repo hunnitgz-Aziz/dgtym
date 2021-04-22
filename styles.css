@@ -583,35 +583,35 @@ div.img17{
 
 }
 
-#Song_06{
-    top: -10vh;
-    width: 160px;left:-2vw;
+#Song_06 {
+    width: 180px;
+    right: 20vw;
+    top: 38vh;
 }
-#Song_05{
-    right: -3%;
-    top: -20%;
-    width: 329px;
+#Song_05 {
+    left: 48vw;
+    top: 65vh;
+    width: 350px;
 }
-#Song_01{
-    top: 10%;
-    width: 410px;
-    transform: rotate(10deg);
-    right: -4%;
+#Song_01 {
+    right: 40px;
+    top: 60px;
+    width: 500px;
 }
-#Song_03{
-    bottom: 0px;
+#Song_03 {
+    bottom: 130px;
+    left: 18vw;
     width: 300px;
-    left: 0px;
 }
-#Song_04{
-    bottom: -10%;
-    left: 20%;
-    width: 250px;
+#Song_04 {
+    width: 280px;
+    top: 50px;
+    left: 10vw;
 }
-#Song_02{
-    bottom: -10%;
-    left: 20%;
-    width: 250px;
+#Song_02 {
+    width: 300px;
+    top: 20vh;
+    left: 30vw;
 }
 #Circling_02, #Circling_01{
     top: -50px;
