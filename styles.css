@@ -866,7 +866,8 @@ p.small{
         animation:none;
         position:relative;
         display:flex;
-        margin:30vw;
+        margin:10vw;
+        top: auto !important;
     }
     div.img2:nth-child(even){
         left:-20vh
