@@ -581,7 +581,7 @@ div.img17{
     mix-blend-mode: screen;
     z-index: 2;
     /* opacity: 0.9; */
-    /* display:none; */
+    display:none;
 }
 
 #G_01,#G_02,#G_03,#G_04{
@@ -920,6 +920,9 @@ p.small{
     }
     #Y_01, #Y_02, #Y_03, #Y_04{
         top:49%;
+    }
+    #Circling_01,#Circling_02,#Circling_03,#Underline_01,#Underline_02,#Underline_03,#Underline_04,#Underline_05,#Underline_06{
+        display:none;
     }
     .songname{
         max-width:80vw !important;
