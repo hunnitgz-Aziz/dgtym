@@ -957,7 +957,7 @@ p.small{
         top:calc(var(--vh)/2 - 10px);
     }
     #D_01, #D_02, #D_03, #D_04 {
-        top: 44%;
+        top: calc(var(--vh)/2 - 50px);
     }
     #Circling_01,#Circling_02,#Circling_03,#Underline_01,#Underline_02,#Underline_03,#Underline_04,#Underline_05,#Underline_06{
         display:none !important;
