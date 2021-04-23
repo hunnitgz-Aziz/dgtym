@@ -608,7 +608,7 @@ div.img17{
     mix-blend-mode: screen;
     z-index: 2;
     /* opacity: 0.9; */
-    display:none;
+    /* display:none; */
 }
 
 #G_01,#G_02,#G_03,#G_04{
@@ -945,16 +945,16 @@ p.small{
     }
 
     #M_01, #M_02, #M_03, #M_04 {
-        top: 51%;
+        top: calc(var(--vh)/2 + 10px);
     }
     #G_01, #G_02, #G_03, #G_04 {
-        top: 46%;
+        top: calc(var(--vh)/2 - 30px);
     }
     #T_01, #T_02, #T_03, #T_04{
-        top:46%;
+        top:calc(var(--vh)/2 - 30px);
     }
     #Y_01, #Y_02, #Y_03, #Y_04{
-        top:49%;
+        top:calc(var(--vh)/2 - 10px);
     }
     #D_01, #D_02, #D_03, #D_04 {
         top: 44%;
