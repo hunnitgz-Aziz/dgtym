@@ -4,9 +4,13 @@
         height:calc(100vh - 4px);
         border:2px solid red;
         background:black;
-        position:fixed;
-        top:0px;
-        left:0px;
+        overflow:hidden;
+        /* position:fixed; */
+        /* top:0px; */
+        /* left:0px; */
+    }
+    body{
+        margin:0px;
     }
 </style>
 
@@ -15,5 +19,5 @@ test
 </div>
 
 <script>
-    document.querySelector("div").style.height = window.innerHeight + "px";
+    document.querySelector("div").style.height = window.innerHeight - 4 + "px";
 </script>
