@@ -20,6 +20,8 @@ let gifs = document.querySelectorAll(".gif");
 let switchTime = new Date('April 22, 2021 23:59:59').getTime();
 let rightNow = new Date().getTime();
 
+document.documentElement.style.setProperty('--vh', window.innerHeight + "px");
+
 
 // var dateInPast = function(firstDate, secondDate) {
 //   if (firstDate.setHours(0, 0, 0, 0) <= secondDate.setHours(0, 0, 0, 0)) {

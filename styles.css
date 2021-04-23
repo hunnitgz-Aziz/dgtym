@@ -95,6 +95,7 @@ canvas{
     --margin: 20px;
     --green: #219e4a;
     --grey: #b8b9b8;
+    --vh: 100vh;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -570,7 +571,7 @@ div.img17{
     position:absolute;
     /* display:none; */
     max-width: 1500px;
-    top: 50%;
+    top: calc(var(--vh)/2);
     transform: translateY(-50%) translateX(-50%);
     left:50%;
     transition: top 300ms ease-in-out, width 300ms ease-in-out;
@@ -870,7 +871,8 @@ p.small{
         flex-wrap:wrap;
     }
     .logo{
-        top: calc(50% - 60px);
+        /* top: calc(50% - 60px); */
+        top: calc(var(--vh)/2);
     }
     .listen-links a{
         /* width: calc(50% - 28px); */
