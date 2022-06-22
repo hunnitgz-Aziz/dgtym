@@ -22,6 +22,7 @@ let rightNow = new Date().getTime();
 
 document.documentElement.style.setProperty('--vh', window.innerHeight + "px");
 
+console.log("this is a test")
 
 // var dateInPast = function(firstDate, secondDate) {
 //   if (firstDate.setHours(0, 0, 0, 0) <= secondDate.setHours(0, 0, 0, 0)) {
