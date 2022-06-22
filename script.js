@@ -40,6 +40,7 @@ if (rightNow < switchTime){
   console.log("past")
 }
 
+console.log("TEST")
 // console.log(switchTime, now);
 
 let mouseIsDown = false;
