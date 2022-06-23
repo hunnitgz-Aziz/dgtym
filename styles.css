@@ -870,7 +870,7 @@ p.small{
         min-width:auto;
         /* margin:var(--margin); */
     }
-    #toggle-film, #toggle-album{
+    #toggle-film, #toggle-album, #tour-link, #merch-link{
         font-size:18px;
     }
     #toggle-film{
