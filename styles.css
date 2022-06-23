@@ -749,7 +749,7 @@ div.img17{
     cursor:pointer;
 } */
 
-.page-open #toggle-album, .page-open #toggle-film, #toggle-film:hover,#toggle-album:hover{
+.page-open #toggle-album, .page-open #toggle-film, #toggle-film:hover,#toggle-album:hover,.page-open #merch-link, .page-open #tour-link{
     color:var(--grey) !important;
 }
 
