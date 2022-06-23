@@ -37,25 +37,25 @@ body.orange section{
     background-image:url(https://res.cloudinary.com/topazjones/image/upload/c_scale,w_1500/v1618958827/DGTYM-BGs/Website_Background_Orange_xoelgl.png);
 }
 body.orange #logo-orange{opacity:1}
-body.orange #toggle-film, body.orange #toggle-album{color:#a26f27}
+body.orange #toggle-film, body.orange #toggle-album, body.orange #merch-link, body.orange #tour-link, body.orange #merch-link:visited, body.orange #tour-link:visited{color:#a26f27}
 
 body.purple section{
     background-color:#7a7094;
     background-image:url(https://res.cloudinary.com/topazjones/image/upload/c_scale,w_1500/v1618958828/DGTYM-BGs/Website_Background_Purple_fuwlhg.png);
 }
 body.purple #logo-purple{opacity:1}
-body.purple #toggle-film, body.purple #toggle-album{color:#706788}
+body.purple #toggle-film, body.purple #toggle-album, body.purple #merch-link, body.purple #tour-link, body.purple #merch-link:visited, body.purple #tour-link:visited{color:#706788}
 body.green section{
     background-color:var(--green);
     background-image:url(https://res.cloudinary.com/topazjones/image/upload/c_scale,w_1500/v1618958828/DGTYM-BGs/Website_Background_Green_f0p9ni.png);
 }
 body.green #logo-green{opacity:1}
-body.green #toggle-film, body.green #toggle-album,  body.green #merch-btn,  body.green #tour-btn{color:var(--green)}
+body.green #toggle-film, body.green #toggle-album, body.green #merch-link, body.green #tour-link, body.green #merch-link:visited, body.green #tour-link:visited{color:var(--green)}
 body.red section{
     background-image:url(https://res.cloudinary.com/topazjones/image/upload/v1618958828/DGTYM-BGs/Website_Background_Red_rxdekn.png);
 }
 body.red #logo-red{opacity:1}
-body.red #toggle-film, body.red #toggle-album{color:#bb3810}
+body.red #toggle-film, body.red #toggle-album, body.red #merch-link, body.red #tour-link, body.red #merch-link:visited, body.red #tour-link:visited{color:#bb3810}
 button, #merch-link, #tour-link{
     font-size:2vw;
     line-height:0.95;
