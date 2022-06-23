@@ -22,7 +22,7 @@ let rightNow = new Date().getTime();
 
 document.documentElement.style.setProperty('--vh', window.innerHeight + "px");
 
-console.log("this is a test")
+console.log("final test")
 
 // var dateInPast = function(firstDate, secondDate) {
 //   if (firstDate.setHours(0, 0, 0, 0) <= secondDate.setHours(0, 0, 0, 0)) {
@@ -40,7 +40,6 @@ if (rightNow < switchTime){
   console.log("past")
 }
 
-console.log("TEST")
 // console.log(switchTime, now);
 
 let mouseIsDown = false;
