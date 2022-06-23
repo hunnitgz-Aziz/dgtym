@@ -47,7 +47,7 @@ body.purple #logo-purple{opacity:1}
 body.purple #toggle-film, body.purple #toggle-album, body.purple #merch-link, body.purple #tour-link, body.purple #merch-link:visited, body.purple #tour-link:visited{color:#706788}
 body.green section{
     background-color:var(--green);
-    background-image:url(https://res.cloudinary.com/topazjones/image/upload/c_scale,w_1500/v1618958828/DGTYM-BGs/Website_Background_Green_f0p9ni.png);
+    background-image:url(/img/backgrounds/Website_Background_Green_f0p9ni.png);
 }
 body.green #logo-green{opacity:1}
 body.green #toggle-film, body.green #toggle-album, body.green #merch-link, body.green #tour-link, body.green #merch-link:visited, body.green #tour-link:visited{color:var(--green)}
@@ -1014,4 +1014,10 @@ p.small{
         top: 65vh;
         width: 290px;
     }
+}
+
+
+
+img.bg.lazy.entered.error{
+    display:none !important;
 }
